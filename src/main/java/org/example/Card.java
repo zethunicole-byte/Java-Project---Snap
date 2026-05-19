@@ -33,4 +33,4 @@ public class Card {
     // Create variables with the card's data - protect the data with private
     // inside constructor "take the suit passed in and store it in this card"
     // getters because the variables are private
-    // Override to string because Java would print it out as weird text
+    // Override to String because Java would show text
