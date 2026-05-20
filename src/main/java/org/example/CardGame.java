@@ -59,3 +59,23 @@ public class CardGame {
         return topCard;
     }
 
+    // This method sorts the deck of cards in ascending numerical order (lowest to highest).
+    // Collections.sort() sorts the list.
+    // The Comparator defines the sorting rules by comparing two cards at a time (c1 and c2).
+    // c1.getValue() - c2.getValue() returns a negative number if c1 is smaller,
+    // zero if they are equal, or a positive number if c1 is larger.
+   // smaller card first, sorting the deck from lowest to highest value.
+
+        public ArrayList<Card> sortDeckInNumberOrder() {
+
+        Collections.sort(deckOfCards, new Comparator<Card>() {
+
+            @Override
+            public int compare(Card c1, Card c2) {
+
+                return c1.getValue() - c2.getValue();
+            }
+        });
+            return deckOfCards;
+        }
+
