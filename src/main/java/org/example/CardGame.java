@@ -1,12 +1,25 @@
+package cardgame;
+
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class CardGame {
 
-    private ArrayList<Card> deckOfCards;
+    // Variables
+    protected ArrayList<Card> deckOfCards;
     private String name;
 
+    // Constructor
     public CardGame(String name) {
+
         this.name = name;
-        this.deckOfCards = new ArrayList<>();
-        createDeck();
-    }
+
+        deckOfCards = new ArrayList<>();
+
+        // Arrays for suits and symbols
+        String[] suits = {"♥", "♦", "♣", "♠"};
+        String[] symbols = {
+                "2", "3", "4", "5", "6", "7",
+                "8", "9", "10", "J", "Q", "K", "A"
+        };
