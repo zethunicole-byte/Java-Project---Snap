@@ -48,3 +48,14 @@ public class CardGame {
             System.out.println(card);
         }
      }
+
+    // Deal top card
+    public Card dealCard() {
+
+        Card topCard = deckOfCards.get(0);
+
+        deckOfCards.remove(0);
+
+        return topCard;
+    }
+
