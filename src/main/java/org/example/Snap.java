@@ -50,7 +50,7 @@ public class Snap extends CardGame {
                 if (currentCard.getSymbol().equals(lastCard.getSymbol())) {
 
                     System.out.println("\nSNAP!");
-                    System.out.println("Type SNAP within 2 seconds!");
+                    System.out.println("Type SNAP within 10 seconds!");
 
                     boolean result = snapTimer();
 
@@ -84,7 +84,7 @@ public class Snap extends CardGame {
 
         try {
 
-            String input = future.get(2, TimeUnit.SECONDS);
+            String input = future.get(10, TimeUnit.SECONDS);
 
             if (input.equalsIgnoreCase("snap")) {
                 return true;
