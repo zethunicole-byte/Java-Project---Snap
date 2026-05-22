@@ -8,9 +8,10 @@ public class Player {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
-    }
+ public String getName() {
+    return name;
+}
+
 }
 
 // This class represents a Player in the card game.
