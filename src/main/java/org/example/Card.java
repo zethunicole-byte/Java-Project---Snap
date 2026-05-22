@@ -29,6 +29,8 @@ public class Card {
         return symbol + suit.getSymbol();
     }
 
+}
+
     // create a class called Card
     // Create variables with the card's data - protect the data with private
     // inside constructor "take the suit passed in and store it in this card"
