@@ -8,10 +8,10 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter Player 1 name: ");
+        System.out.print("Player enter your 1 name: ");
         Player p1 = new Player(scanner.nextLine());
 
-        System.out.print("Enter Player 2 name: ");
+        System.out.print("Player 2 enter your name: ");
         Player p2 = new Player(scanner.nextLine());
 
         Snap game = new Snap("Snap", p1, p2);
