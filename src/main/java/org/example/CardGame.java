@@ -39,4 +39,30 @@ public class CardGame {
         }
     }
 
+    public void getDeck() {
+
+        for (Card card : deckOfCards) {
+            System.out.println(card);
+        }
+    }
+
+    public Card dealCard() {
+
+        if (deckOfCards.isEmpty()) {
+            return null;
+        }
+
+        return deckOfCards.remove(0);
+    }
+    public ArrayList<Card> sortDeckInNumberOrder() {
+
+        deckOfCards.sort(
+                Comparator.comparingInt(Card::getValue)
+        );
+
+        return deckOfCards;
+    }
+
+
+
 
