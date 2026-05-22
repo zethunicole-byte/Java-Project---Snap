@@ -72,3 +72,30 @@ public class Snap extends CardGame {
 
         System.out.println("No snap happened");
     }
+
+    public boolean snapTimer() {
+
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+
+        Future<String> future = executor.submit(() -> {
+
+            Scanner scanner = new Scanner(System.in);
+            return scanner.nextLine();
+        });
+
+        try {
+
+            String input = future.get(2, TimeUnit.SECONDS);
+
+            if (input.equalsIgnoreCase("snap")) {
+                return true;
+            }
+
+        } catch (Exception e) {
+            return false;
+        }
+
+        executor.shutdownNow();
+        return false;
+    }
+}
