@@ -8,7 +8,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Player enter your 1 name: ");
+        System.out.print("Player 1 enter your  name: ");
         Player p1 = new Player(scanner.nextLine());
 
         System.out.print("Player 2 enter your name: ");
@@ -19,3 +19,6 @@ public class Main {
         game.playGame();
     }
 }
+
+
+//

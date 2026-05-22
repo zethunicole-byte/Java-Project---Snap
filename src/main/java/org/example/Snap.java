@@ -1,7 +1,7 @@
 package org.example;
 
 import java.util.Scanner;
-import java.util.concurrent.*;
+import java.util.Scanner;
 
 public class Snap extends CardGame {
 
@@ -12,8 +12,8 @@ public class Snap extends CardGame {
 
         super(name);
 
-        this.player1 = p1;
-        this.player2 = p2;
+        player1 = p1;
+        player2 = p2;
 
         shuffleDeck();
     }
@@ -45,18 +45,41 @@ public class Snap extends CardGame {
 
             System.out.println(currentPlayer.getName() + " got: " + currentCard);
 
+            // Check for snap
             if (lastCard != null) {
 
                 if (currentCard.getSymbol().equals(lastCard.getSymbol())) {
 
                     System.out.println("\nSNAP!");
-                    System.out.println("Type SNAP within 10 seconds!");
+                    System.out.println(currentPlayer.getName()
+                            + " type SNAP within 10 seconds!");
 
-                    boolean result = snapTimer();
+                    try {
 
-                    if (result == true) {
-                        System.out.println(currentPlayer.getName() + " wins!");
+
+                        Thread.sleep(1000);
+
+                    } catch (InterruptedException e) {
+
+                        System.out.println("Timer error");
+                    }
+
+                    long startTime = System.currentTimeMillis();
+
+                    String input = scanner.nextLine();
+
+                    long endTime = System.currentTimeMillis();
+
+                    long totalTime = (endTime - startTime) / 1000;
+
+                    if (input.equalsIgnoreCase("snap")
+                            && totalTime <= 10) {
+
+                        System.out.println(currentPlayer.getName()
+                                + " wins!");
+
                     } else {
+
                         System.out.println("Too slow!");
                         System.out.println("Game over");
                     }
@@ -66,35 +89,10 @@ public class Snap extends CardGame {
             }
 
             lastCard = currentCard;
+
             player1Turn = !player1Turn;
         }
 
         System.out.println("No snap happened");
-    }
-
-    public boolean snapTimer() {
-
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-
-        Future<String> future = executor.submit(() -> {
-
-            Scanner scanner = new Scanner(System.in);
-            return scanner.nextLine();
-        });
-
-        try {
-
-            String input = future.get(10, TimeUnit.SECONDS);
-
-            if (input.equalsIgnoreCase("snap")) {
-                return true;
-            }
-
-        } catch (Exception e) {
-            return false;
-        }
-
-        executor.shutdownNow();
-        return false;
     }
 }
