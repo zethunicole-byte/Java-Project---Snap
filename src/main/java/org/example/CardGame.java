@@ -63,6 +63,32 @@ public class CardGame {
         return deckOfCards;
     }
 
+    public ArrayList<Card> sortDeckIntoSuits() {
+
+        deckOfCards.sort((c1, c2) -> {
+
+            int suitCompare =
+                    c1.getSuit().ordinal()
+                            - c2.getSuit().ordinal();
+
+            if (suitCompare == 0) {
+                return c1.getValue() - c2.getValue();
+            }
+
+            return suitCompare;
+        });
+
+        return deckOfCards;
+    }
+
+    public ArrayList<Card> shuffleDeck() {
+
+        Collections.shuffle(deckOfCards);
+
+        return deckOfCards;
+    }
+}
+
 
 
 
