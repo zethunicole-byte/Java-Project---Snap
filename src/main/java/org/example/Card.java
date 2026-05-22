@@ -11,23 +11,6 @@ public class Card {
         this.symbol = symbol;
         this.value = value;
     }
-     //getters//
-    public String getSuit() {
-        return suit;
-    }
-
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return symbol + suit + " (Value: " + value + ")";
-    }
 
 
     // create a class called Card
