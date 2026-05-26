@@ -81,7 +81,7 @@ public class Snap extends CardGame {
                     } else {
 
                         System.out.println("Too slow!");
-                        System.out.println("Game over");
+                        System.out.println("Game Over!");
                     }
 
                     return;
