@@ -52,7 +52,7 @@ public class CardGame {
             return null;
         }
 
-        return deckOfCards.remove(0);
+        return deckOfCards.removeFirst();
     }
     public ArrayList<Card> sortDeckInNumberOrder() {
 

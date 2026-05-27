@@ -61,7 +61,7 @@ public class Snap extends CardGame {
 
                     } catch (InterruptedException e) {
 
-                        System.out.println("Timer error");
+                        System.out.println("Timer error!");
                     }
 
                     long startTime = System.currentTimeMillis();
