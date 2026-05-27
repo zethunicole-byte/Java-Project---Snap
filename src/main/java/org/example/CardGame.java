@@ -81,11 +81,10 @@ public class CardGame {
         return deckOfCards;
     }
 
-    public ArrayList<Card> shuffleDeck() {
+    public void shuffleDeck() {
 
         Collections.shuffle(deckOfCards);
 
-        return deckOfCards;
     }
 }
 
